@@ -37,16 +37,10 @@ export default class ItemDetails extends Component {
     image: null
   };
 
-  //После инициализации компонента вызываем updateItem()
   componentDidMount() {
     this.updateItem();
   }
 
-  //При изменении компонента(новые props или изменился state)
-  //проверяем изменялись ли props, здесь это itemId
-  //или изменился сервер(SwapiService или DummySwapiService) в getData
-  //или изменился getImageUrl
-  // только в этом случае вызываем updateItem()
   componentDidUpdate(prevProps) {
     if (this.props.itemId !== prevProps.itemId ||
       this.props.getData !== prevProps.getData ||
@@ -55,11 +49,6 @@ export default class ItemDetails extends Component {
     }
   }
 
-
-  //Достали (itemId, getData, getImageUrl) из props 
-  //если !itemId выходим из ф-ии
-  //если же itemId получен передали его в getData(itemId) 
-  // и после получения результата установили его в state
   updateItem() {
     const { itemId, getData, getImageUrl } = this.props;
     if (!itemId) {
@@ -82,8 +71,6 @@ export default class ItemDetails extends Component {
       return <span>Select a person from a list</span>;
     }
 
-    //Деструктурируем из state данные и передаем их
-    //в html теги
     const { name } = item;
 
     return (
@@ -97,8 +84,7 @@ export default class ItemDetails extends Component {
           <ul className="list-group list-group-flush">
 
             {/* Ф-ия  React.Children.map пройдеться по всем children елементам
-          вернет их копию благодаря React.cloneElement, т.к. изменять елементы после того как они были созданы нельзя
-          и каждой копии елемента child добавит дополнительное св-во { item }
+          вернет их копию благодаря React.cloneElement и каждой копии елемента child добавит дополнительное св-во { item }
           */}
             {
               React.Children.map(this.props.children, (child) => {
@@ -106,10 +92,6 @@ export default class ItemDetails extends Component {
               })
             }
           </ul>
-          {/* Добавили кнопку для генерации ошибки что бы проверить что если "упадет"
-компонент PersonDetails то ошибку отловит метод жизненого цикла расположеный
-в PeoplePage и выведеться <ErrorIndicator /> вместо того
-что бы упал весь код */}
           <ErrorButton />
         </div>
       </div>

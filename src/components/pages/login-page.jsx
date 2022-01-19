@@ -1,13 +1,11 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 
-//Компонент для выполненя авторизации для доступа к SecretPage  
-
 const LoginPage = ({ isLoggedIn, onLogin }) => {
 
   if (isLoggedIn) {
-    return <Navigate to="/"/>;
-  } 
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className="jumbotron">

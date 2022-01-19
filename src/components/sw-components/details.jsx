@@ -4,16 +4,9 @@ import ItemDetails, { Record } from '../item-details';
 
 import { SwapiServiceConsumer } from '../swapi-service-context';
 
-// В етом файле создали компоненты которые
-// будут отображать детали для каждого вида елементов
-
 const PersonDetails = ({ itemId }) => {
 
   return (
-    //Испозуем SwapiServiceConsumer для получения swapiService,
-    // переданного через контекст из app.js из SwapiServiceProvider на
-    //Дале деструктруируем из  swapiService нужные ф-ии {getPlanet, getPlanetImage}
-    //По правилам SwapiServiceConsumer должен принимать ф-ию
 
     <SwapiServiceConsumer>
       {
@@ -23,12 +16,6 @@ const PersonDetails = ({ itemId }) => {
               itemId={itemId}
               getData={getPerson}
               getImageUrl={getPersonImage} >
-
-              {/* Передаем в теле компонента <ItemDetails>
-несколько компонентов <Record>, который определяет какие данные отображать,
-а доступ к ним получим через (this.props.children)*/}
-              {/* field - это поле в обьекте который возвращает ф-ия  _transformStarship
-в SwapiService, а label - это просто название строки в компоненте при отрисовке на странице*/}
               <Record field="gender" label="Gender" />
               <Record field="eyeColor" label="Eye Color" />
             </ItemDetails>

@@ -19,7 +19,6 @@ import { SwapiServiceProvider } from '../swapi-service-context';
 import './app.css';
 
 import {
-  // BrowserRouter as Router,
   Routes,
   Route,
   Navigate
@@ -40,8 +39,6 @@ export default class App extends Component {
     });
   };
 
-  //ф-ия которая переключает SwapiService или DummySwapiService
-  //вызываем єту ф-ию по клику на кнопке в компоненте  <Header />
   onServiceChange = () => {
     this.setState(({ swapiService }) => {
       const Service = swapiService instanceof SwapiService ?

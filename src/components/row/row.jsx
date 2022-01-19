@@ -17,7 +17,7 @@ const Row = ({ left, right }) => {
 };
 
 Row.propTypes = {
-  left: PropTypes.node, // node - это что то, что можно отрендерить в JSX
+  left: PropTypes.node,
   right: PropTypes.node
 }
 
