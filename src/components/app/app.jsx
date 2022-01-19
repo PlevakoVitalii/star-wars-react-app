@@ -19,11 +19,13 @@ import { SwapiServiceProvider } from '../swapi-service-context';
 import './app.css';
 
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   Routes,
   Route,
   Navigate
 } from "react-router-dom";
+
+import { HashRouter as Router } from 'react-router-dom'
 
 export default class App extends Component {
 
@@ -60,7 +62,7 @@ export default class App extends Component {
     return (
       <ErrorBoundry>
         <SwapiServiceProvider value={this.state.swapiService}>
-          <Router>
+          <Router basename="/">
             <div className="stardb-app">
               <Header onServiceChange={this.onServiceChange} />
               <RandomPlanet />
