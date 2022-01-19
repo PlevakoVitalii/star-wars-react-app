@@ -1,8 +1,10 @@
 ## Star-wars-react-app
 
-![](https://github.com/PlevakoVitalii/star-wars-react-app/blob/master/readme-image.bmp)
+![](https://github.com/PlevakoVitalii/star-wars-react-app/blob/master/readme-image.png)
 
-Deployed todo-react-app here [Todo](https://plevakovitalii.github.io/star-wars-react-app/star-wars-react/).
+Deployed todo-react-app here [Star-wars](https://plevakovitalii.github.io/star-wars-react-app/star-wars-react/).
+
+Implemented functionality:
 
 - receiving data from the server or from a local file of your choice and storing it in a state;
 - transition between pages without reloading;
